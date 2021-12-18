@@ -11,5 +11,6 @@ class ItemType {
 private:
 	int priority;
 	string data;
+	int twinIndex;
 };
 #endif

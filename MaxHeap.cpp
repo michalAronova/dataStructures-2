@@ -1,46 +1,5 @@
 #include "MaxHeap.h"
 
-/*
-class MaxHeap {
-public:
-
-private:
-	ItemType** heap;
-	int logSize;
-	int physSize;
-};
-*/
-
-/*MaxHeap::MaxHeap()
-{
-
-}
-*/
-MaxHeap::MaxHeap(const MaxHeap& other)
-{
-	_logSize = other._logSize;
-	_physSize = _logSize;
-
-	if (_logSize > 0)
-	{
-		_heap = new ItemType * [_physSize];
-
-		for (int i=0;i<_logSize;i++)
-		{
-			_heap[i] = new ItemType(*other._heap[i]);
-		}
-	}
-}
-
-MaxHeap::~MaxHeap()
-{
-	for (int i = 0; i < _logSize; ++i)
-	{
-		delete _heap[i];
-	}
-	delete[] _heap;
-}
-
 void MaxHeap::insert(ItemType* newItem)
 {
 	if (_logSize == _physSize)
@@ -66,12 +25,7 @@ void MaxHeap::insert(ItemType* newItem)
 	*_heap[index] = *newItem;
 }
 
-void MaxHeap::reAlloc(ItemType* heap[], int newSize)
-{
-
-}
-
-ItemType& MaxHeap::Max()
+ItemType& MaxHeap::max()
 {
 	if (_logSize == 0)
 		throw exception("Heap is empty!");
@@ -79,7 +33,7 @@ ItemType& MaxHeap::Max()
 		return *_heap[0];
 }
 
-ItemType  MaxHeap::DeleteMax()
+ItemType  MaxHeap::deleteMax()
 {
 	if (_logSize == 0)
 		throw exception("Heap is empty!");

@@ -15,7 +15,6 @@ private:
 	MaxHeap maxHeap;
 	MinHeap minHeap;
 	int logSize;
-	int physSize;
 };
 
 #endif

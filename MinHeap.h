@@ -1,15 +1,19 @@
 #ifndef MINHEAP_H
 #define MINHEAP_H
 
-#include "ItemType.h"
+#include "HeapBase.h"
 
-class MinHeap {
+class MinHeap : public HeapBase {
+
 public:
+	MinHeap() {}
+	virtual ~MinHeap();
 
-private:
-	ItemType** heap;
-	int logSize;
-	int physSize;
+	virtual void insert(ItemType*);
+	virtual void fixHeap(int);
+
+	ItemType& min() const;
+	ItemType deleteMin();
 };
 
 #endif
