@@ -139,12 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataStructure.h" />
     <ClInclude Include="DoubleHeap.h" />
     <ClInclude Include="ItemType.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="DoubleHeap.cpp" />
     <ClCompile Include="ItemType.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

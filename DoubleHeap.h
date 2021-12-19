@@ -4,29 +4,34 @@
 #include "ItemType.h"
 const int MAX_SIZE = 100;
 
+
 class DoubleHeap {
-	
 public:
-	DoubleHeap();
-	DoubleHeap(const DoubleHeap&);
-	~DoubleHeap();
+	enum heapType { MAX, MIN };
+
+	DoubleHeap() :_heapSize(0) {}
 
 	//static methods
 	static int Parent(int index) { return (index - 1) / 2; };
 	static int Left(int index) { return 2 * index + 1; };
 	static int Right(int index) { return 2 * index + 2; };
 
-	int insert(int, string);
-	
+	void	 insert(ItemType);
+	void	 insert(int, string);
+	void	 swap(ItemType& a, ItemType& b);
+	ItemType deleteHead(heapType);
+
 	//max
-	void fixMaxHeap(int);
-	ItemType max() const;
-	ItemType deleteMax();
+	ItemType  max() const;
+	ItemType  deleteMaxByIdx(int index = 0, int fixed = 0);
+	void	  fixMaxHeap(int);
 
 	//min
-	void fixMinHeap(int);
-	ItemType min() const;
-	ItemType deleteMin();
+	ItemType  min() const;
+	ItemType  deleteMinByIdx(int index = 0, int fixed = 0);
+	void	  fixMinHeap(int);
+	
+	friend class DataStructure;
 
 private:
 	ItemType _maxHeap[MAX_SIZE];

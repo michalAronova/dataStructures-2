@@ -8,9 +8,12 @@ using namespace std;
   
 class ItemType {
 public:
-	ItemType(int priority, string data, int twinIndex = 0) : _priority(priority), _data(data), _twinIndex(twinIndex) {}
+	ItemType(int priority = 0, string data = "", int twinIndex = 0) : _priority(priority), _data(data), _twinIndex(twinIndex) {}
 	
+	friend ostream& operator<<(ostream& os, const ItemType& item);
 	friend class DoubleHeap;
+	friend class DataStructure;
+
 
 private:
 	int _priority;
