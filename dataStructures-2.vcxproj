@@ -141,11 +141,13 @@
   <ItemGroup>
     <ClInclude Include="DataStructure.h" />
     <ClInclude Include="DoubleHeap.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="ItemType.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="DoubleHeap.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="ItemType.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

@@ -10,7 +10,6 @@ void DoubleHeap::insert(int priority, string data)
 	{
 		throw exception("Reached heap maximum size.");
 	}
-
 	int maxIndex = _heapSize;
 	int minIndex = _heapSize;
 	++_heapSize;
