@@ -23,7 +23,7 @@ ItemType DataStructure::DeleteMax()
 	}
 	else
 	{
-		ItemType max = _big.deleteMaxByIdx();
+		ItemType max = _big.deleteHead(DoubleHeap::MAX);
 		balance();
 		_size--;
 		return max;
@@ -48,7 +48,7 @@ ItemType DataStructure::DeleteMin()
 	}
 	else
 	{
-		ItemType min = _small.deleteMinByIdx();
+		ItemType min = _small.deleteHead(DoubleHeap::MIN);
 		balance();
 		_size--;
 		return min;
@@ -95,13 +95,13 @@ void DataStructure::balance()
 	ItemType ToMove;
 	if (_small._heapSize - _big._heapSize > 1)
 	{
-		ToMove = _small.deleteMaxByIdx();
+		ToMove = _small.deleteHead(DoubleHeap::MAX);
 		_big.insert(ToMove);
 	}
 
 	else if (_big._heapSize - _small._heapSize > 0)
 	{
-		ToMove = _big.deleteMinByIdx();
+		ToMove = _big.deleteHead(DoubleHeap::MIN);
 		_small.insert(ToMove);
 	}
 }
