@@ -3,48 +3,13 @@
 
 int main()
 {
-	DataStructure ds = DataStructure::CreateEmpty();
-	run();
-
-
-	string str;
-	stringstream ss;
-
-	char command;
-	int numberOfCommands;
-
-	getline(cin, str);
-	numberOfCommands = checkNum(str); // returns -1 if not a number or negative
-	if (numberOfCommands == -1)
+	try 
 	{
-		cout << "wrong input";
-		//throw//
+		run();
 	}
-
-	for (int i = 0; i < numberOfCommands - 1; i++)
+	catch(const char* msg)
 	{
-		getline(cin, str); 
-		if (i == 0)
-		{
-			if (str != "e")
-			{
-				cout << "wrong input";
-				//throw//
-			}
-		}
-		command = checkValidCommand(str);// returns the command if input is "a-g + endl" or "f ", if empty line or not valid or 'e' return 0 // covers not enough case
-		if (!command)
-		{
-			cout << "wrong input";
-			//throw//
-		}
-		doStuff(str, command);
-	}
-	getline(cin, str);
-	if (str != "")
-	{
-		cout << "wrong input";
-		//throw//
+		cout << msg << endl;
 	}
 }
 	/*

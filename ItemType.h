@@ -14,7 +14,6 @@ public:
 	friend class DoubleHeap;
 	friend class DataStructure;
 
-
 private:
 	int _priority;
 	string _data;
