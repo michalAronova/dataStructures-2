@@ -5,7 +5,7 @@ ItemType DataStructure::Max() const
 {
 	if (_size == 0)
 	{
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	}
 	else if (_size == 1)
 	{
@@ -19,7 +19,7 @@ ItemType DataStructure::DeleteMax()
 {
 	if (_size == 0)
 	{
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	}
 	else
 	{
@@ -34,7 +34,7 @@ ItemType DataStructure::Min() const
 {
 	if (_size == 0)
 	{
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	}
 	else
 		return _small.min();
@@ -44,7 +44,7 @@ ItemType DataStructure::DeleteMin()
 {
 	if (_size == 0)
 	{
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	}
 	else
 	{
@@ -84,7 +84,7 @@ ItemType DataStructure::Median()
 {
 	if (_size == 0)
 	{
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	}
 	else
 		return _small.max();

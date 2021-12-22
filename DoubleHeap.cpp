@@ -56,7 +56,7 @@ ItemType DoubleHeap::deleteHead(heapType T)
 ItemType DoubleHeap::max() const
 {
 	if (_heapSize == 0)
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	else
 		return _maxHeap[0];
 }
@@ -64,7 +64,7 @@ ItemType DoubleHeap::max() const
 ItemType DoubleHeap::deleteMaxByIdx(int index, int fixed)
 {
 	if (_heapSize == 0)
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	
 	else
 	{
@@ -77,7 +77,6 @@ ItemType DoubleHeap::deleteMaxByIdx(int index, int fixed)
 		if (!fixed)
 		{
 			deleteMinByIdx(toDelete._twinIndex, 1);
-
 		}
 
 		return toDelete;
@@ -115,7 +114,7 @@ void DoubleHeap::fixMaxHeap(int index)
 ItemType DoubleHeap::min() const
 {
 	if (_heapSize == 0)
-		throw exception("Heap is empty!");
+		throw "wrong input";
 	else
 		return _minHeap[0];
 }
@@ -123,7 +122,7 @@ ItemType DoubleHeap::min() const
 ItemType DoubleHeap::deleteMinByIdx(int index, int fixed)
 {
 	if (_heapSize == 0)
-		throw exception("Heap is empty!");
+		throw "wrong input";
 
 	else
 	{

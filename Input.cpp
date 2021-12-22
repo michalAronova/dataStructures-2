@@ -21,7 +21,7 @@ void run()
 	for (int i = 0; i < numberOfCommands - 1; i++)
 	{
 		getline(cin, str);
-		checkValidCommand(str);// returns the command if input is "a-g + endl" or "f ", if empty line or not valid or 'e' return 0 // covers not enough case
+		checkValidCommand(str);
 		doStuff(str, ds);
 	}
 
@@ -55,22 +55,6 @@ void handleFirstLine(const string& str)
 
 void checkValidCommand(const string& str)
 {
-	/*
-	do strtok on the string. 
-	check if the token we got is abcdfg NO E 
-	if it's not one of those throw exception
-
-	char first = token[0]
-
-	else
-		get next token with strtok
-		if token = a/b/c/d/g
-			if token != "" throw exception
-			else return 
-		else it is f
-			check if token is a number
-			if yes - 		
-	*/
 	char* charstr = new char[str.length() + 1];
 	strcpy(charstr, str.c_str());
 	char* token = strtok(charstr, " ");
@@ -110,7 +94,7 @@ void isNumber(char* str)
 	if (*c == '-') //negative number is valid
 	{
 		c++;
-		if (*c == '\0') //if the string was "-" it's not valid
+		if (*c == '\0') //but if the string was simply "-" it's not valid
 			throw "wrong input";
 	}
 
